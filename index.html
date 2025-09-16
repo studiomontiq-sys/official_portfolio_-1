@@ -8,8 +8,9 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(to bottom,#111,#000);color:#fff;scroll-behavior:smooth;position:relative;}
 header{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;transition:opacity .8s;}
-header h1{font-size:3rem;margin-bottom:20px;opacity:0;transform:translateY(50px);transition:.8s;}
-header p{font-size:1.2rem;max-width:600px;margin-bottom:30px;opacity:0;transform:translateY(50px);transition:.8s;}
+header h1{font-size:3rem;margin-bottom:10px;opacity:0;transform:translateY(50px);transition:.8s;}
+header h1 span{background:linear-gradient(45deg,#6366f1,#4f46e5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+header p{font-size:1.2rem;max-width:600px;margin-bottom:20px;opacity:0;transform:translateY(50px);transition:.8s;}
 header button{background:linear-gradient(45deg,#6366f1,#4f46e5);border:none;padding:12px 30px;border-radius:25px;color:#fff;cursor:pointer;transition:transform .3s,background .3s;margin:5px;}
 header button:hover{transform:scale(1.1);}
 section{padding:80px 20px;opacity:0;transform:translateY(50px);transition:.8s;}
@@ -71,7 +72,7 @@ button.equal{background:#10b981;grid-column:span 2;} button.equal:hover{backgrou
 <body>
 
 <header>
-  <h1>Hej, jestem <span style="color:#6366f1;">Montiq</span></h1>
+  <h1><span>Montiq</span></h1>
   <p>Tworzę nowoczesne strony internetowe, animacje i projekty IT. Zobacz moje portfolio!</p>
   <div>
     <button onclick="scrollToSection('about')">O mnie</button>
@@ -235,14 +236,4 @@ function sendMessage(){
   const name=document.getElementById("name").value.trim();
   const email=document.getElementById("email").value.trim();
   const message=document.getElementById("message").value.trim();
-  const feedback=document.getElementById("contact-feedback");
-  if(!name||!email||!message){feedback.style.color='red';feedback.textContent="Wypełnij wszystkie pola!";return;}
-  feedback.style.color='#00ff99';
-  feedback.textContent="Wiadomość wysłana! (symulacja, brak backendu)";
-  document.getElementById("name").value="";
-  document.getElementById("email").value="";
-  document.getElementById("message").value="";
-}
-</script>
-</body>
-</html>
+  const feedback=document.getElementById("contact-feedback
