@@ -10,7 +10,7 @@ body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-g
 header{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;transition:opacity .8s;}
 header h1{font-size:3rem;margin-bottom:20px;opacity:0;transform:translateY(50px);transition:.8s;}
 header p{font-size:1.2rem;max-width:600px;margin-bottom:30px;opacity:0;transform:translateY(50px);transition:.8s;}
-header button{background:linear-gradient(45deg,#6366f1,#4f46e5);border:none;padding:12px 30px;border-radius:25px;color:#fff;cursor:pointer;transition:transform .3s,background .3s;}
+header button{background:linear-gradient(45deg,#6366f1,#4f46e5);border:none;padding:12px 30px;border-radius:25px;color:#fff;cursor:pointer;transition:transform .3s,background .3s;margin:5px;}
 header button:hover{transform:scale(1.1);}
 section{padding:80px 20px;opacity:0;transform:translateY(50px);transition:.8s;}
 section h2{text-align:center;margin-bottom:40px;}
@@ -42,10 +42,11 @@ button.equal{background:#10b981;grid-column:span 2;} button.equal:hover{backgrou
 #scrollTopBtn{position:fixed;bottom:30px;right:30px;padding:12px 15px;border-radius:50%;background:#6366f1;color:#fff;border:none;font-size:1.2rem;cursor:pointer;display:none;transition:transform .3s;}
 #scrollTopBtn:hover{transform:scale(1.1);background:#4f46e5;}
 /* Kontakt */
-.contact-form{max-width:500px;margin:0 auto;background:#111;padding:30px;border-radius:20px;box-shadow:0 0 20px rgba(0,0,0,.4);}
-.contact-form input, .contact-form textarea{width:100%;padding:12px;margin:10px 0;border-radius:10px;border:none;background:#222;color:#fff;}
-.contact-form button{background:#6366f1;padding:12px 20px;border-radius:20px;border:none;color:#fff;cursor:pointer;transition:transform .3s,background .3s;}
-.contact-form button:hover{transform:scale(1.05);background:#4f46e5;}
+.contact-form{max-width:500px;margin:0 auto;background:#222;padding:30px;border-radius:20px;box-shadow:0 0 20px rgba(0,0,0,.5);}
+.contact-form input, .contact-form textarea{width:100%;padding:12px;margin:10px 0;border-radius:10px;border:none;background:#111;color:#fff;}
+.contact-form input::placeholder, .contact-form textarea::placeholder{color:#aaa;}
+.contact-form button{background:#4f46e5;padding:12px 20px;border-radius:20px;border:none;color:#fff;cursor:pointer;transition:transform .3s,background .3s;}
+.contact-form button:hover{transform:scale(1.05);background:#6366f1;}
 </style>
 </head>
 <body>
@@ -53,7 +54,11 @@ button.equal{background:#10b981;grid-column:span 2;} button.equal:hover{backgrou
 <header>
   <h1>Hej, jestem <span style="color:#6366f1;">Montiq</span></h1>
   <p>Tworzę nowoczesne strony internetowe, animacje i projekty IT. Zobacz moje portfolio!</p>
-  <button onclick="scrollToSection('about')">O mnie</button>
+  <div>
+    <button onclick="scrollToSection('about')">O mnie</button>
+    <button onclick="scrollToSection('projects')">Projekty</button>
+    <button onclick="scrollToSection('contact')">Kontakt</button>
+  </div>
 </header>
 
 <section id="about">
@@ -87,7 +92,7 @@ button.equal{background:#10b981;grid-column:span 2;} button.equal:hover{backgrou
 </section>
 
 <section id="contact">
-  <h2>Kontakt</h2>
+  <h2 style="color:#fff;text-align:center;margin-bottom:30px;">Kontakt</h2>
   <div class="contact-form">
     <input type="text" placeholder="Twoje imię" id="name">
     <input type="email" placeholder="Twój e-mail" id="email">
