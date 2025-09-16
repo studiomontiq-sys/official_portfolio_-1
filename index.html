@@ -41,6 +41,11 @@ button.equal{background:#10b981;grid-column:span 2;} button.equal:hover{backgrou
 /* Scroll to top button */
 #scrollTopBtn{position:fixed;bottom:30px;right:30px;padding:12px 15px;border-radius:50%;background:#6366f1;color:#fff;border:none;font-size:1.2rem;cursor:pointer;display:none;transition:transform .3s;}
 #scrollTopBtn:hover{transform:scale(1.1);background:#4f46e5;}
+/* Kontakt */
+.contact-form{max-width:500px;margin:0 auto;background:#111;padding:30px;border-radius:20px;box-shadow:0 0 20px rgba(0,0,0,.4);}
+.contact-form input, .contact-form textarea{width:100%;padding:12px;margin:10px 0;border-radius:10px;border:none;background:#222;color:#fff;}
+.contact-form button{background:#6366f1;padding:12px 20px;border-radius:20px;border:none;color:#fff;cursor:pointer;transition:transform .3s,background .3s;}
+.contact-form button:hover{transform:scale(1.05);background:#4f46e5;}
 </style>
 </head>
 <body>
@@ -78,6 +83,17 @@ button.equal{background:#10b981;grid-column:span 2;} button.equal:hover{backgrou
       <h3 style="color:#6366f1;">Mini Kalkulator</h3>
       <p>Kliknij, aby użyć kalkulatora online!</p>
     </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Kontakt</h2>
+  <div class="contact-form">
+    <input type="text" placeholder="Twoje imię" id="name">
+    <input type="email" placeholder="Twój e-mail" id="email">
+    <textarea rows="5" placeholder="Twoja wiadomość" id="message"></textarea>
+    <button onclick="sendMessage()">Wyślij</button>
+    <p id="contact-feedback" style="margin-top:10px;color:#00ff99;"></p>
   </div>
 </section>
 
@@ -193,7 +209,20 @@ function closeCalculator(){calcModal.classList.remove("active");}
 function appendValue(val){currentInput += val; calcDisplay.textContent=currentInput;}
 function clearDisplay(){currentInput='';calcDisplay.textContent='0';}
 function calculateResult(){try{let result=eval(currentInput);if(result===undefined)result='';calcDisplay.textContent=result;currentInput=result.toString();}catch(e){calcDisplay.textContent='Błąd';currentInput='';}}
-</script>
 
+// --- Kontakt ---
+function sendMessage(){
+  const name=document.getElementById("name").value.trim();
+  const email=document.getElementById("email").value.trim();
+  const message=document.getElementById("message").value.trim();
+  const feedback=document.getElementById("contact-feedback");
+  if(!name||!email||!message){feedback.style.color='red';feedback.textContent="Wypełnij wszystkie pola!";return;}
+  feedback.style.color='#00ff99';
+  feedback.textContent="Wiadomość wysłana! (symulacja, brak backendu)";
+  document.getElementById("name").value="";
+  document.getElementById("email").value="";
+  document.getElementById("message").value="";
+}
+</script>
 </body>
 </html>
