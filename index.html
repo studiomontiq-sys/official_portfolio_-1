@@ -3,237 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Montiq – Portfolio Profesjonalne</title>
+<title>Montiq Portfolio</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(to bottom,#111,#000);color:#fff;scroll-behavior:smooth;position:relative;}
-header{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;transition:opacity .8s;}
-header h1{font-size:3rem;margin-bottom:10px;opacity:0;transform:translateY(50px);transition:.8s;}
-header h1 span{background:linear-gradient(45deg,#6366f1,#4f46e5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-header p{font-size:1.2rem;max-width:600px;margin-bottom:20px;opacity:0;transform:translateY(50px);transition:.8s;}
-header button{background:linear-gradient(45deg,#6366f1,#4f46e5);border:none;padding:12px 30px;border-radius:25px;color:#fff;cursor:pointer;transition:transform .3s,background .3s;margin:5px;}
-header button:hover{transform:scale(1.1);}
-section{padding:80px 20px;opacity:0;transform:translateY(50px);transition:.8s;}
-section h2{text-align:center;margin-bottom:40px;}
-.skills,.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-.card,.project{background:#111;padding:30px;border-radius:20px;box-shadow:0 0 20px rgba(0,0,0,.4);transition:transform .4s,box-shadow .4s, background .4s;cursor:pointer;}
-.card:hover,.project:hover{transform:scale(1.07);box-shadow:0 0 40px rgba(99,102,241,.6);background:linear-gradient(135deg,#6366f1,#4f46e5);}
-.about{max-width:800px;margin:0 auto;background:#111;padding:40px;border-radius:20px;box-shadow:0 0 20px rgba(0,0,0,.4);line-height:1.6;}
-footer{text-align:center;padding:30px;font-size:.9rem;color:#aaa;background:#0a0a0a;}
-/* Modal */
-.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.9);display:flex;justify-content:center;align-items:center;visibility:hidden;opacity:0;transition:.3s;z-index:1000;}
-.modal.active{visibility:visible;opacity:1;}
-.modal-content{background:#1c1c1c;padding:30px;border-radius:20px;max-width:500px;width:90%;text-align:center;transform:scale(0.7);opacity:0;}
-.modal.active .modal-content{animation:modalIn 0.4s forwards;}
-@keyframes modalIn{to{transform:scale(1);opacity:1;}}
-.options button{display:block;width:100%;background:#6366f1;border:none;padding:12px;margin:8px 0;border-radius:15px;color:#fff;font-size:1rem;cursor:pointer;transition:transform .3s,background .3s;}
-.options button:hover{transform:scale(1.05);background:#4f46e5;}
-button:active{transform:scale(0.95);transition:transform .1s;}
-.result{margin-top:20px;font-size:1.2rem;color:#00ff99;}
-.restart-btn,.close-btn{margin-top:20px;background:#00bcd4;border:none;padding:12px 20px;border-radius:15px;color:#fff;cursor:pointer;font-size:1rem;display:none;}
-.restart-btn:hover,.close-btn:hover{transform:scale(1.05);}
-.close-btn{background:#f44336;}
-/* Kalkulator */
-.display{background:#111;padding:20px;border-radius:15px;text-align:right;font-size:2rem;margin-bottom:20px;overflow-x:auto;}
-.buttons{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;}
-button.clear{background:#ef4444;} button.clear:hover{background:#b91c1c;}
-button.operator{background:#f59e0b;} button.operator:hover{background:#d97706;}
-button.equal{background:#10b981;grid-column:span 2;} button.equal:hover{background:#059669;}
-/* Scroll to top button */
-#scrollTopBtn{position:fixed;bottom:30px;right:30px;padding:12px 15px;border-radius:50%;background:#6366f1;color:#fff;border:none;font-size:1.2rem;cursor:pointer;display:none;transition:transform .3s;}
-#scrollTopBtn:hover{transform:scale(1.1);background:#4f46e5;}
-/* Kontakt */
-.contact-form{max-width:500px;margin:0 auto;background:#222;padding:30px;border-radius:20px;box-shadow:0 0 20px rgba(0,0,0,.5);}
-.contact-form input, .contact-form textarea{width:100%;padding:12px;margin:10px 0;border-radius:10px;border:none;background:#111;color:#fff;}
-.contact-form input::placeholder, .contact-form textarea::placeholder{color:#aaa;}
-.contact-form button{background:#4f46e5;padding:12px 20px;border-radius:20px;border:none;color:#fff;cursor:pointer;transition:transform .3s,background .3s;}
-.contact-form button:hover{transform:scale(1.05);background:#6366f1;}
-
-/* --- Responsywność --- */
-@media(max-width:768px){
-  header h1{font-size:2.2rem;}
-  header p{font-size:1rem;max-width:90%;}
-  .skills,.projects{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;}
-  .card,.project{padding:20px;}
-  .about{padding:30px;}
-}
-
-@media(max-width:480px){
-  header h1{font-size:1.8rem;}
-  header p{font-size:.9rem;}
-  header button{padding:10px 20px;font-size:.9rem;}
-  section{padding:60px 15px;}
-  .display{font-size:1.5rem;padding:15px;}
-  .buttons{gap:10px;}
-  .buttons button{padding:10px;font-size:.9rem;}
-}
+body{font-family:sans-serif;background:#111;color:#fff;}
+header{height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;}
+header h1{font-size:3rem;color:#6366f1;}
+header p{font-size:1.2rem;margin-bottom:20px;}
+header button{margin:5px;padding:10px 20px;border:none;border-radius:20px;background:#4f46e5;color:#fff;cursor:pointer;}
+section{padding:60px 20px;}
+.skills, .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
+.card, .project{background:#222;padding:20px;border-radius:15px;text-align:center;cursor:pointer;}
+.about{background:#222;padding:20px;border-radius:15px;max-width:700px;margin:0 auto;}
+.contact-form{background:#222;padding:20px;border-radius:15px;max-width:500px;margin:0 auto;}
+.contact-form input, .contact-form textarea{width:100%;padding:10px;margin:10px 0;border:none;border-radius:10px;background:#111;color:#fff;}
+.contact-form button{background:#4f46e5;color:#fff;padding:10px 20px;border:none;border-radius:15px;cursor:pointer;}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);justify-content:center;align-items:center;}
+.modal.active{display:flex;}
+.modal-content{background:#222;padding:20px;border-radius:15px;max-width:500px;width:90%;}
+@media(max-width:480px){header h1{font-size:2rem;}header p{font-size:1rem;}}
 </style>
 </head>
 <body>
 
 <header>
-  <h1><span>Montiq</span></h1>
-  <p>Tworzę nowoczesne strony internetowe, animacje i projekty IT. Zobacz moje portfolio!</p>
-  <div>
-    <button onclick="scrollToSection('about')">O mnie</button>
-    <button onclick="scrollToSection('projects')">Projekty</button>
-    <button onclick="scrollToSection('contact')">Kontakt</button>
-  </div>
+<h1>Montiq</h1>
+<p>Tworzę strony, animacje i projekty IT!</p>
+<button onclick="scrollToSection('about')">O mnie</button>
+<button onclick="scrollToSection('projects')">Projekty</button>
+<button onclick="scrollToSection('contact')">Kontakt</button>
 </header>
 
 <section id="about">
-  <h2>O mnie</h2>
-  <div class="about">
-    <p>Cześć! Mam na imię Montiq i choć mam tylko 12 lat, udowadniam, że wiek to nie przeszkoda w tworzeniu profesjonalnych projektów IT. Pasjonuję się technologią, programowaniem i tworzeniem nowoczesnych stron internetowych oraz interaktywnych projektów. Od najmłodszych lat uczę się kodowania, eksperymentuję z grafiką i animacjami oraz rozwijam swoje umiejętności w praktyce. Tworzę projekty, które łączą estetykę z funkcjonalnością i pokazują moje zaangażowanie oraz kreatywność. Jestem ambitny, uczę się nowych technologii i nie boję się wyzwań – udowadniam, że młody wiek nie jest przeszkodą w tworzeniu wartościowych projektów!</p>
-  </div>
-</section>
-
-<section id="skills">
-  <h2>Co potrafię</h2>
-  <div class="skills">
-    <div class="card"><h3 style="color:#6366f1;">Programowanie</h3><p>Tworzenie stron i interaktywnych projektów.</p></div>
-    <div class="card"><h3 style="color:#6366f1;">Grafika & Montaż</h3><p>Estetyczne projekty graficzne i filmy.</p></div>
-    <div class="card"><h3 style="color:#6366f1;">Animacje</h3><p>Płynne efekty i interaktywne doświadczenia.</p></div>
-  </div>
+<h2>O mnie</h2>
+<div class="about">
+<p>Mam 12 lat i udowadniam, że wiek to nie przeszkoda w tworzeniu profesjonalnych projektów IT. Tworzę strony, animacje i interaktywne projekty.</p>
+</div>
 </section>
 
 <section id="projects">
-  <h2>Projekty</h2>
-  <div class="projects">
-    <div class="project" onclick="openQuiz()">
-      <h3 style="color:#6366f1;">Mini Quiz</h3>
-      <p>Kliknij, aby zagrać w quiz IT!</p>
-    </div>
-    <div class="project" onclick="openCalculator()">
-      <h3 style="color:#6366f1;">Mini Kalkulator</h3>
-      <p>Kliknij, aby użyć kalkulatora online!</p>
-    </div>
-  </div>
+<h2>Projekty</h2>
+<div class="projects">
+<div class="project" onclick="openQuiz()">Mini Quiz</div>
+<div class="project" onclick="openCalculator()">Mini Kalkulator</div>
+</div>
 </section>
 
 <section id="contact">
-  <h2 style="color:#fff;text-align:center;margin-bottom:30px;">Kontakt</h2>
-  <div class="contact-form">
-    <input type="text" placeholder="Twoje imię" id="name">
-    <input type="email" placeholder="Twój e-mail" id="email">
-    <textarea rows="5" placeholder="Twoja wiadomość" id="message"></textarea>
-    <button onclick="sendMessage()">Wyślij</button>
-    <p id="contact-feedback" style="margin-top:10px;color:#00ff99;"></p>
-  </div>
+<h2>Kontakt</h2>
+<div class="contact-form">
+<input type="text" placeholder="Twoje imię" id="name">
+<input type="email" placeholder="Twój email" id="email">
+<textarea placeholder="Twoja wiadomość" id="message"></textarea>
+<button onclick="sendMessage()">Wyślij</button>
+<p id="feedback" style="color:#0f0;"></p>
+</div>
 </section>
 
-<footer>
-  © 2025 Montiq. Wszystkie prawa zastrzeżone.
-</footer>
+<footer style="text-align:center;padding:20px;">© 2025 Montiq</footer>
 
-<button id="scrollTopBtn" onclick="scrollToTop()">⬆</button>
-
-<!-- Modal Quiz -->
+<!-- Quiz Modal -->
 <div class="modal" id="quizModal">
-  <div class="modal-content">
-    <h2>Mini Quiz IT – Łatwy</h2>
-    <div class="question" id="q-question"></div>
-    <div class="options" id="q-options"></div>
-    <div class="result" id="q-result"></div>
-    <button class="restart-btn" id="q-restart">Zagraj jeszcze raz</button>
-    <button class="close-btn" id="q-close">Zamknij quiz i wróć</button>
-  </div>
+<div class="modal-content">
+<h2>Mini Quiz</h2>
+<div id="q-question"></div>
+<div id="q-options"></div>
+<button onclick="closeQuiz()">Zamknij Quiz</button>
+</div>
 </div>
 
-<!-- Modal Kalkulator -->
+<!-- Kalkulator Modal -->
 <div class="modal" id="calcModal">
-  <div class="modal-content">
-    <h2>Mini Kalkulator</h2>
-    <div class="display" id="calc-display">0</div>
-    <div class="buttons">
-      <button class="clear" onclick="clearDisplay()">C</button>
-      <button onclick="appendValue('(')">(</button>
-      <button onclick="appendValue(')')">)</button>
-      <button class="operator" onclick="appendValue('/')">/</button>
-      <button onclick="appendValue('7')">7</button>
-      <button onclick="appendValue('8')">8</button>
-      <button onclick="appendValue('9')">9</button>
-      <button class="operator" onclick="appendValue('*')">*</button>
-      <button onclick="appendValue('4')">4</button>
-      <button onclick="appendValue('5')">5</button>
-      <button onclick="appendValue('6')">6</button>
-      <button class="operator" onclick="appendValue('-')">-</button>
-      <button onclick="appendValue('1')">1</button>
-      <button onclick="appendValue('2')">2</button>
-      <button onclick="appendValue('3')">3</button>
-      <button class="operator" onclick="appendValue('+')">+</button>
-      <button onclick="appendValue('0')">0</button>
-      <button onclick="appendValue('.')">.</button>
-      <button class="equal" onclick="calculateResult()">=</button>
-    </div>
-    <button class="close-btn" onclick="closeCalculator()">Zamknij kalkulator</button>
-  </div>
+<div class="modal-content">
+<h2>Kalkulator</h2>
+<div id="calc-display">0</div>
+<button onclick="closeCalculator()">Zamknij Kalkulator</button>
+</div>
 </div>
 
 <script>
-// Scroll animations
-const faders = document.querySelectorAll('header h1, header p, section');
-window.addEventListener('scroll', () => {
-  const triggerBottom = window.innerHeight / 5 * 4;
-  faders.forEach(el => {
-    const boxTop = el.getBoundingClientRect().top;
-    if(boxTop < triggerBottom){
-      el.style.opacity = 1;
-      el.style.transform = 'translateY(0)';
-    }
-  });
-});
-
 function scrollToSection(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
-const scrollBtn = document.getElementById("scrollTopBtn");
-window.onscroll = function(){scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';};
-function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'});}
+function sendMessage(){document.getElementById("feedback").textContent="Wiadomość wysłana!";}
+function openQuiz(){document.getElementById("quizModal").classList.add("active");}
+function closeQuiz(){document.getElementById("quizModal").classList.remove("active");}
+function openCalculator(){document.getElementById("calcModal").classList.add("active");}
+function closeCalculator(){document.getElementById("calcModal").classList.remove("active");}
+</script>
 
-// --- Quiz ---
-const quizPool = [
-  {question:"Jakiego koloru jest niebo?", options:["Niebieskie","Zielone","Czerwone","Fioletowe"], answer:"Niebieskie"},
-  {question:"Ile jest dni w tygodniu?", options:["5","6","7","8"], answer:"7"},
-  {question:"Co używamy do pisania stron WWW?", options:["HTML","Python","C++","Java"], answer:"HTML"},
-  {question:"Do stylizacji stron używamy?", options:["CSS","HTML","Java","Python"], answer:"CSS"},
-  {question:"Jaki język służy do logiki i animacji?", options:["JavaScript","CSS","HTML","Python"], answer:"JavaScript"},
-  {question:"Który tag tworzy akapit?", options:["<p>","<div>","<h1>","<span>"], answer:"<p>"},
-  {question:"Jak wyświetlamy tekst w JS w konsoli?", options:["console.log()","alert()","print()","echo()"], answer:"console.log()"},
-  {question:"Ile miesięcy jest w roku?", options:["10","11","12","13"], answer:"12"},
-  {question:"Jaki kolor ma trawa?", options:["Zielony","Niebieski","Czerwony","Żółty"], answer:"Zielony"},
-  {question:"Ile nóg ma pies?", options:["2","3","4","6"], answer:"4"}
-];
-let quiz=[], current=0, score=0;
-const modal=document.getElementById("quizModal"),
-      qQuestion=document.getElementById("q-question"),
-      qOptions=document.getElementById("q-options"),
-      qResult=document.getElementById("q-result"),
-      qRestart=document.getElementById("q-restart"),
-      qClose=document.getElementById("q-close");
-
-function shuffle(array){for(let i=array.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[array[i],array[j]]=[array[j],array[i]];} return array;}
-function openQuiz(){modal.classList.add("active");startQuiz();}
-function closeQuiz(){modal.classList.remove("active");}
-function startQuiz(){quiz=shuffle([...quizPool]);current=0;score=0;qRestart.style.display="none";qResult.textContent="";loadQuestion();}
-function loadQuestion(){
-  if(current>=quiz.length){qQuestion.textContent="Quiz zakończony!";qOptions.innerHTML="";qResult.textContent=`Twój wynik: ${score} / ${quiz.length}`;qRestart.style.display="inline-block";qClose.style.display="inline-block";return;}
-  const q=quiz[current];qQuestion.textContent=q.question;qOptions.innerHTML="";qClose.style.display="inline-block";
-  const shuffledOptions=shuffle([...q.options]);shuffledOptions.forEach(opt=>{const btn=document.createElement("button");btn.textContent=opt;btn.onclick=()=>checkAnswer(opt);qOptions.appendChild(btn);});
-}
-function checkAnswer(selected){if(selected===quiz[current].answer){score++;qResult.textContent="✅ Dobrze!";}else{qResult.textContent=`❌ Źle! Poprawna odpowiedź: ${quiz[current].answer}`;}current++;setTimeout(()=>{qResult.textContent="";loadQuestion();},1500);}
-qRestart.addEventListener("click",startQuiz);qClose.addEventListener("click",closeQuiz);
-
-// --- Kalkulator ---
-const calcModal=document.getElementById("calcModal"), calcDisplay=document.getElementById("calc-display");
-let currentInput = '';
-function openCalculator(){calcModal.classList.add("active");currentInput='';calcDisplay.textContent='0';}
-function closeCalculator(){calcModal.classList.remove("active");}
-function appendValue(val){currentInput += val; calcDisplay.textContent=currentInput;}
-function clearDisplay(){currentInput='';calcDisplay.textContent='0';}
-function calculateResult(){try{let result=eval(currentInput);if(result===undefined)result='';calcDisplay.textContent=result;currentInput=result.toString();}catch(e){calcDisplay.textContent='Błąd';currentInput='';}}
-
-// --- Kontakt ---
-function sendMessage(){
-  const name=document.getElementById("name").value.trim();
-  const email=document.getElementById("email").value.trim();
-  const message=document.getElementById("message").value.trim();
-  const feedback=document.getElementById("contact-feedback
+</body>
+</html>
